@@ -1,13 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boas-vindas</title>
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <main class="container">
@@ -17,12 +14,10 @@
 
         <p>Olá, <strong>{{ usuario }}</strong>!</p>
 
-        <p>Que bom ter você por aqui. 
+        <p>Que bom ter você por aqui.
         Seu acesso foi realizado com sucesso!</p>
 
-        <form method="POST" action="{{ url_for('sair') }}">
-            <input type="hidden" name="csrf_token"
-                   value="{{ csrf_token }}">
+        <form method="GET" action="{{ url_for('logout') }}">
             <button type="submit">Sair da conta</button>
         </form>
     </main>
